@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter as BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
@@ -20,24 +20,22 @@ import Video from "@/components/ui/video";
 
 const queryClient = new QueryClient();
 
-// Simple authentication wrapper component
+// Simple authentication wrapper
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
-  
+
   useEffect(() => {
     const checkAuth = () => {
       const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
       setIsAuthenticated(isLoggedIn);
     };
-    
     checkAuth();
   }, []);
-  
+
   if (isAuthenticated === null) {
-    // Still checking authentication status
     return <div className="flex h-screen items-center justify-center">Loading...</div>;
   }
-  
+
   return isAuthenticated ? <>{children}</> : <Navigate to="/login" />;
 };
 
@@ -46,7 +44,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <HashRouter basename="/">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -56,7 +54,7 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
