@@ -38,7 +38,7 @@ const Fashion = () => {
       id: 1,
       title: "Summer Collection",
       category: "Editorial",
-      image: "/lovable-uploads/1cb96b82-31c8-4f79-9365-eb23a4bfc4c8.png",
+      image: "public/lovable-uploads/1cb96b82-31c8-4f79-9365-eb23a4bfc4c8.png",
       description: "A vibrant editorial shoot showcasing the latest summer trends with lightweight fabrics and bold colors.",
       client: "Fashion Magazine",
       photographer: "Jane Smith",
@@ -48,7 +48,7 @@ const Fashion = () => {
       id: 2,
       title: "Urban Elegance",
       category: "Commercial",
-      image: "/lovable-uploads/26d9f84d-93af-4f3f-935d-21c6ebdf937f.png",
+      image: "public/lovable-uploads/26d9f84d-93af-4f3f-935d-21c6ebdf937f.png",
       description: "Commercial campaign for a premium clothing brand, shot in the heart of the city.",
       client: "Luxury Brand Co.",
       year: 2023
@@ -57,7 +57,7 @@ const Fashion = () => {
       id: 3,
       title: "Paris Fashion Week",
       category: "Runway",
-      image: "/lovable-uploads/357ea9c5-6a81-4980-afb3-0dda40df4919.png",
+      image: "public/lovable-uploads/357ea9c5-6a81-4980-afb3-0dda40df4919.png",
       description: "Walking for a renowned designer at Paris Fashion Week, showcasing avant-garde couture pieces.",
       client: "Designer House",
       year: 2022
@@ -66,7 +66,7 @@ const Fashion = () => {
       id: 4,
       title: "Winter Collection",
       category: "Campaign",
-      image: "/lovable-uploads/7e04893a-ef02-44c6-96ad-5e68880373bb.png",
+      image: "public/lovable-uploads/7e04893a-ef02-44c6-96ad-5e68880373bb.png",
       description: "A seasonal campaign for winter apparel, shot in a snowy mountain setting.",
       client: "Winter Apparel Inc.",
       photographer: "Michael Brown",
@@ -76,7 +76,7 @@ const Fashion = () => {
       id: 5,
       title: "Minimalist Series",
       category: "Editorial",
-      image: "/lovable-uploads/ae139fdd-c90a-4407-b79f-1f8ebad5dc67.png",
+      image: "public/lovable-uploads/ae139fdd-c90a-4407-b79f-1f8ebad5dc67.png",
       description: "A clean, minimalist editorial focusing on shape, form, and negative space.",
       client: "Design Quarterly",
       photographer: "Sarah Johnson",
@@ -86,7 +86,7 @@ const Fashion = () => {
       id: 6,
       title: "Spring Campaign",
       category: "Campaign",
-      image: "/lovable-uploads/dd473452-7149-47a4-856e-075831b4b5a1.png",
+      image: "public/lovable-uploads/dd473452-7149-47a4-856e-075831b4b5a1.png",
       description: "A fresh and vibrant campaign showcasing spring collection with floral motifs.",
       client: "Spring Fashion Ltd.",
       year: 2023
@@ -95,7 +95,7 @@ const Fashion = () => {
       id: 7,
       title: "Accessories Spotlight",
       category: "Commercial",
-      image: "/lovable-uploads/effb464c-46e9-4f0e-9149-8adb1d3b1d22.png",
+      image: "public/lovable-uploads/effb464c-46e9-4f0e-9149-8adb1d3b1d22.png",
       description: "Commercial shoot focused on premium accessories and jewelry pieces.",
       client: "Luxe Accessories",
       photographer: "David Lee",
@@ -131,7 +131,7 @@ const Fashion = () => {
         <section className="relative h-[50vh] bg-fashion-beige/30">
           <div className="absolute inset-0 overflow-hidden">
             <img
-              src="/lovable-uploads/1cb96b82-31c8-4f79-9365-eb23a4bfc4c8.png"
+              src="public/lovable-uploads/1cb96b82-31c8-4f79-9365-eb23a4bfc4c8.png"
               alt="Fashion Hero"
               className="w-full h-full object-cover object-center opacity-40"
             />

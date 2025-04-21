@@ -9,7 +9,7 @@ import { ImageUpload } from "@/components/common/ImageUpload";
 export default function About() {
   const defaultAbout = {
     title: "About Me",
-    image: "/lovable-uploads/357ea9c5-6a81-4980-afb3-0dda40df4919.png",
+    image: "public/lovable-uploads/357ea9c5-6a81-4980-afb3-0dda40df4919.png",
     paragraphs: [
       "I am a fashion model and data analyst with over 5 years of experience in both fields. My unique career path has allowed me to develop a rare combination of creative and analytical skills.",
       "In the fashion industry, I've worked with renowned brands and photographers, while my data analysis expertise spans Python, SQL, and R, delivering insights that drive business decisions."
@@ -68,7 +68,7 @@ export default function About() {
         <section className="relative h-[50vh] bg-gradient-to-r from-fashion-beige to-data-lightblue/30">
           <div className="absolute inset-0 overflow-hidden">
             <img
-              src="/lovable-uploads/7e04893a-ef02-44c6-96ad-5e68880373bb.png"
+              src="public/lovable-uploads/7e04893a-ef02-44c6-96ad-5e68880373bb.png"
               alt="About Hero"
               className="w-full h-full object-cover object-center opacity-20"
             />

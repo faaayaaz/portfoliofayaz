@@ -115,7 +115,7 @@ export default function Data() {
   const [profile, setProfile] = useState({
     name: "Fayaz Mohamed",
     role: "Data Analyst",
-    img: "/lovable-uploads/c2bb14be-8935-4258-a0cf-e45281db002f.png",
+    img: "public/lovable-uploads/c2bb14be-8935-4258-a0cf-e45281db002f.png",
     about: "Experienced Data Analyst with a passion for deriving actionable insights from complex data."
   });
   const [showProfileEdit, setShowProfileEdit] = useState(false);

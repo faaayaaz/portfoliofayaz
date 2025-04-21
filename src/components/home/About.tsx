@@ -51,9 +51,9 @@ export default function AboutPreview() {
             </div>
             {/* Additional Preview Images for About */}
             <div className="flex gap-4 mt-8">
-              <img src="/lovable-uploads/ec60566c-f4b9-4a91-ad34-b3a8294c1ef6.png" alt="Profile" className="rounded-md w-20 h-20 object-cover shadow" />
-              <img src="/lovable-uploads/ec44a1a0-5b5b-4869-8f36-4b0c37e340f2.png" alt="Profile" className="rounded-md w-20 h-20 object-cover shadow" />
-              <img src="/lovable-uploads/83c8a021-5998-44ec-ad17-1c9a1d09695a.png" alt="Profile" className="rounded-md w-20 h-20 object-cover shadow" />
+              <img src="public/lovable-uploads/ec60566c-f4b9-4a91-ad34-b3a8294c1ef6.png" alt="Profile" className="rounded-md w-20 h-20 object-cover shadow" />
+              <img src="public/lovable-uploads/ec44a1a0-5b5b-4869-8f36-4b0c37e340f2.png" alt="Profile" className="rounded-md w-20 h-20 object-cover shadow" />
+              <img src="public/lovable-uploads/83c8a021-5998-44ec-ad17-1c9a1d09695a.png" alt="Profile" className="rounded-md w-20 h-20 object-cover shadow" />
             </div>
           </div>
         </motion.div>

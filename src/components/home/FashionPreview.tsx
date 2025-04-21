@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -6,7 +5,8 @@ import { motion } from "framer-motion";
 
 export default function FashionPreview() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  
+  const [loadedImages, setLoadedImages] = useState<boolean[]>([]);
+
   const fashionProjects = [
     {
       title: "Urban Collection",
@@ -25,6 +25,14 @@ export default function FashionPreview() {
     },
   ];
 
+  const handleImageLoad = (index: number) => {
+    setLoadedImages(prev => {
+      const updated = [...prev];
+      updated[index] = true;
+      return updated;
+    });
+  };
+
   return (
     <section className="section-padding bg-fashion-cream">
       <div className="max-w-6xl mx-auto">
@@ -41,7 +49,7 @@ export default function FashionPreview() {
               brands, and creative concepts.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {fashionProjects.map((project, index) => (
               <motion.div
@@ -58,10 +66,12 @@ export default function FashionPreview() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out"
-                    style={{
-                      transform: hoveredIndex === index ? "scale(1.05)" : "scale(1)"
-                    }}
+                    loading="lazy"
+                    onLoad={() => handleImageLoad(index)}
+                    className={`w-full h-full object-cover transition-transform duration-500 ease-in-out
+                      ${hoveredIndex === index ? "scale-105" : "scale-100"}
+                      ${loadedImages[index] ? "blur-0" : "blur-md"} 
+                    `}
                   />
                 </div>
                 <div className="p-4">
@@ -71,7 +81,7 @@ export default function FashionPreview() {
               </motion.div>
             ))}
           </div>
-          
+
           <div className="mt-10 text-center">
             <Button asChild size="lg">
               <Link to="/fashion">View All Fashion Projects</Link>
