@@ -50,7 +50,7 @@ export default function About() {
     {
       category: "Data Analysis",
       items: [
-        { name: "Power BI", level: 90 },
+        { name: "Power BI", level: 85 },
         { name: "SQL", level: 80 },
         { name: "R", level: 45 },
         { name: "Power Query", level: 75 },
