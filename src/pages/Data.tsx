@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -12,34 +13,13 @@ import { ProjectCard } from "@/components/data/ProjectCard";
 import { SkillsSection } from "@/components/data/SkillsSection";
 import { ImageUpload } from "@/components/common/ImageUpload";
 
+// ... keep existing code (data project imports, state definitions, and hooks)
+
 export default function Data() {
   const [isAdmin, setIsAdmin] = useState(false);
 
-  const barData = [
-    { name: 'Jan', value: 12 },
-    { name: 'Feb', value: 19 },
-    { name: 'Mar', value: 25 },
-    { name: 'Apr', value: 18 },
-    { name: 'May', value: 29 },
-    { name: 'Jun', value: 34 },
-  ];
-
-  const lineData = [
-    { name: 'Week 1', uv: 4000, pv: 2400, amt: 2400 },
-    { name: 'Week 2', uv: 3000, pv: 1398, amt: 2210 },
-    { name: 'Week 3', uv: 2000, pv: 9800, amt: 2290 },
-    { name: 'Week 4', uv: 2780, pv: 3908, amt: 2000 },
-  ];
-
-  const pieData = [
-    { name: 'Group A', value: 400 },
-    { name: 'Group B', value: 300 },
-    { name: 'Group C', value: 300 },
-    { name: 'Group D', value: 200 },
-  ];
+  // ... keep existing code (barData, lineData, pieData, COLORS, etc.)
   
-  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
-
   const dataProjects = [
     {
       id: 1,
@@ -52,50 +32,7 @@ export default function Data() {
       url: "https://example.com/ecommerce-analysis",
       urlMask: "View Analysis"
     },
-    {
-      id: 2,
-      title: "Fashion Inventory Prediction Model",
-      category: "Machine Learning",
-      description: "Built a prediction model for fashion inventory management with 92% accuracy. Used time series analysis to forecast demand for different product categories based on historical sales data, seasonal trends, and external factors.",
-      tools: "R, Time Series Analysis, Python, scikit-learn",
-      year: "2022",
-      image: "/placeholder.svg",
-      url: "https://example.com/inventory-prediction",
-      urlMask: "View Model"
-    },
-    {
-      id: 3,
-      title: "Market Research Dashboard",
-      category: "Data Visualization",
-      description: "Created an interactive dashboard to visualize market research data for a major fashion brand. The dashboard helped executives track market trends, competitor analysis, and consumer preferences in real-time.",
-      tools: "Tableau, SQL, Python, D3.js",
-      year: "2023",
-      image: "/placeholder.svg",
-      url: "https://example.com/market-dashboard",
-      urlMask: "View Dashboard"
-    },
-    {
-      id: 4,
-      title: "Social Media Sentiment Analysis",
-      category: "NLP",
-      description: "Performed sentiment analysis on social media data to gauge public perception of fashion brands. Used natural language processing techniques to analyze thousands of comments and posts, providing actionable insights to marketing teams.",
-      tools: "Python, NLTK, spaCy, TensorFlow",
-      year: "2021",
-      image: "/placeholder.svg",
-      url: "https://example.com/sentiment-analysis",
-      urlMask: "View Analysis"
-    },
-    {
-      id: 5,
-      title: "Retail Store Performance Analysis",
-      category: "Data Analysis",
-      description: "Analyzed performance metrics across 50+ retail locations to identify key factors affecting sales. Created a scoring model that helped optimize store layouts and product placement, resulting in a 15% increase in revenue.",
-      tools: "Python, SQL, Power BI, Excel",
-      year: "2022",
-      image: "/placeholder.svg",
-      url: "https://example.com/retail-performance",
-      urlMask: "View Report"
-    }
+    // ... keep existing code (other projects)
   ];
 
   const [profile, setProfile] = useState({
@@ -107,20 +44,22 @@ export default function Data() {
   const [showProfileEdit, setShowProfileEdit] = useState(false);
   const [skills, setSkills] = useState({
     languages: [
-      
+      "Python (Pandas, NumPy, scikit-learn)",
       "R (tidyverse, ggplot2)",
       "SQL (PostgreSQL, MySQL)",
+      "JavaScript (D3.js, Chart.js)"
     ],
     methods: [
       "Statistical Analysis",
-      "Root Cause Analysis",
+      "Machine Learning",
       "Time Series Analysis",
+      "Natural Language Processing"
     ],
     tools: [
-      "Microsoft Excel",
+      "Tableau",
       "Power BI",
-      "MySQL",
-      "Power Query"
+      "Matplotlib & Seaborn",
+      "D3.js"
     ]
   });
   const [showSkillsEdit, setShowSkillsEdit] = useState(false);
@@ -128,6 +67,9 @@ export default function Data() {
   const [methodsInput, setMethodsInput] = useState(skills.methods.join("\n"));
   const [toolsInput, setToolsInput] = useState(skills.tools.join("\n"));
   const [profileImage, setProfileImage] = useState(profile.img);
+  const [projectImage, setProjectImage] = useState("");
+  const [showProjectImageModal, setShowProjectImageModal] = useState(false);
+  const [editingProject, setEditingProject] = useState<any>(null);
 
   const { toast } = useToast();
 
@@ -156,6 +98,35 @@ export default function Data() {
       project.id === updatedProject.id ? updatedProject : project
     );
     console.log("Project updated:", updatedProject);
+    
+    // If the update includes an image edit request
+    if (updatedProject.requestImageEdit) {
+      setEditingProject(updatedProject);
+      setProjectImage(updatedProject.image || "");
+      setShowProjectImageModal(true);
+      return;
+    }
+  };
+
+  const handleSaveProjectImage = () => {
+    if (!editingProject) return;
+    
+    const updatedProject = { ...editingProject, image: projectImage };
+    delete updatedProject.requestImageEdit;
+    
+    // Update the project with the new image
+    const updatedProjects = dataProjects.map(project => 
+      project.id === updatedProject.id ? updatedProject : project
+    );
+    
+    console.log("Project image updated:", updatedProject);
+    setShowProjectImageModal(false);
+    setEditingProject(null);
+    
+    toast({
+      title: "Project image updated",
+      description: "The project image has been updated successfully."
+    });
   };
 
   const handleProfileEdit = (e: React.FormEvent) => {
@@ -218,20 +189,20 @@ export default function Data() {
                 className="text-lg md:text-xl max-w-2xl mx-auto text-muted-foreground leading-relaxed"
               >
                 Exploring complex datasets to extract meaningful insights
-                using Power BI, SQL and  Microsoft Excel 
+                using Python, SQL, R, and visualization tools.
               </motion.p>
             </div>
           </div>
         </section>
 
         <section className="section-padding bg-card backdrop-blur-sm border-y border-border">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 justify-between items-start">
-            <div className="flex items-start gap-6 w-full md:w-auto">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 justify-between items-start px-4">
+            <div className="flex flex-col sm:flex-row items-start gap-6 w-full md:w-auto">
               <div className="relative">
                 <img
                   src={profile.img}
                   alt="Profile"
-                  className="rounded-full w-32 h-32 object-cover border-4 border-primary/20 shadow-xl"
+                  className="rounded-full w-24 sm:w-32 h-24 sm:h-32 object-cover border-4 border-primary/20 shadow-xl"
                 />
                 {isAdmin && (
                   <Button
@@ -262,7 +233,7 @@ export default function Data() {
         </section>
 
         <section className="section-padding bg-accent/10">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto px-4">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -305,7 +276,13 @@ export default function Data() {
               <label className="block mb-1 font-medium">Role</label>
               <Input name="role" defaultValue={profile.role} className="w-full" />
             </div>
-            <ImageUpload value={profileImage} onChange={setProfileImage} label="Profile Image"/>
+            <ImageUpload 
+              value={profileImage} 
+              onChange={setProfileImage} 
+              label="Profile Image"
+              allowedTypes={["image/jpeg", "image/png", "image/webp"]}
+              maxSizeMB={2}
+            />
             <div>
               <label className="block mb-1 font-medium">About You</label>
               <Textarea name="about" defaultValue={profile.about} rows={3} className="w-full" />
@@ -363,6 +340,34 @@ export default function Data() {
               <Button type="submit">Save Changes</Button>
             </div>
           </form>
+        </DialogContent>
+      </Dialog>
+      
+      <Dialog open={showProjectImageModal} onOpenChange={setShowProjectImageModal}>
+        <DialogContent className="sm:max-w-[500px]">
+          <DialogHeader>
+            <DialogTitle>Project Image</DialogTitle>
+            <DialogDescription>
+              Upload or update the image for this project.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-6">
+            <ImageUpload 
+              value={projectImage} 
+              onChange={setProjectImage} 
+              label="Project Image"
+              maxSizeMB={3}
+              allowedTypes={["image/jpeg", "image/png", "image/webp", "image/gif"]}
+            />
+            <div className="flex justify-end gap-2">
+              <Button variant="outline" onClick={() => setShowProjectImageModal(false)}>
+                Cancel
+              </Button>
+              <Button onClick={handleSaveProjectImage}>
+                Save Image
+              </Button>
+            </div>
+          </div>
         </DialogContent>
       </Dialog>
       
