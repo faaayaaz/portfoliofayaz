@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -27,8 +26,8 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
+    // Simulate form submission (replace with actual API call if needed)
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
@@ -100,8 +99,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium">Email</h3>
-                      <a href="mailto:contact@example.com" className="text-gray-600 hover:text-primary">
-                        contact@example.com
+                      <a href="mailto:fayas818@gmail.com" className="text-gray-600 hover:text-primary" aria-label="Send email to fayas818@gmail.com">
+                        fayas818@gmail.com
                       </a>
                     </div>
                   </div>
@@ -112,7 +111,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium">Phone</h3>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
+                      <p className="text-gray-600">+971 50 614 4135</p>
                     </div>
                   </div>
                 </div>
@@ -121,20 +120,23 @@ export default function Contact() {
                   <h3 className="text-xl font-serif mb-4">Connect With Me</h3>
                   <div className="flex space-x-4">
                     <a 
-                      href="#" 
+                      href="#"
                       className="h-10 w-10 rounded-full bg-fashion-taupe flex items-center justify-center text-white hover:bg-fashion-charcoal transition-colors"
+                      aria-label="Facebook"
                     >
                       <Facebook className="h-5 w-5" />
                     </a>
                     <a 
-                      href="#" 
+                      href="https://www.instagram.com/faaayaaz?igsh=MTFjdnhqdzU2OTNrMA%3D%3D&utm_source=qr"
                       className="h-10 w-10 rounded-full bg-fashion-taupe flex items-center justify-center text-white hover:bg-fashion-charcoal transition-colors"
+                      aria-label="Instagram"
                     >
                       <Instagram className="h-5 w-5" />
                     </a>
                     <a 
-                      href="#" 
+                      href="https://www.linkedin.com/in/faaayaaz?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                       className="h-10 w-10 rounded-full bg-data-navy flex items-center justify-center text-white hover:bg-data-blue transition-colors"
+                      aria-label="LinkedIn"
                     >
                       <Linkedin className="h-5 w-5" />
                     </a>
@@ -168,6 +170,7 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="Your name"
                         required
+                        aria-label="Your full name"
                       />
                     </div>
                     <div>
@@ -182,6 +185,7 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="your.email@example.com"
                         required
+                        aria-label="Your email address"
                       />
                     </div>
                     <div>
@@ -195,6 +199,7 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="What is this regarding?"
                         required
+                        aria-label="Subject of the message"
                       />
                     </div>
                     <div>
@@ -209,6 +214,7 @@ export default function Contact() {
                         placeholder="Your message..."
                         rows={5}
                         required
+                        aria-label="Your message content"
                       />
                     </div>
                     <Button 

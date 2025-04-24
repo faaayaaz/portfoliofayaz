@@ -9,16 +9,16 @@ import { ImageUpload } from "@/components/common/ImageUpload";
 export default function About() {
   const defaultAbout = {
     title: "About Me",
-    image: "public/lovable-uploads/357ea9c5-6a81-4980-afb3-0dda40df4919.png",
+    image: "public/lovable-uploads/aboutme.png",
     paragraphs: [
-      "I am a fashion model and data analyst with over 5 years of experience in both fields. My unique career path has allowed me to develop a rare combination of creative and analytical skills.",
-      "In the fashion industry, I've worked with renowned brands and photographers, while my data analysis expertise spans Python, SQL, and R, delivering insights that drive business decisions."
+      "I’m a data analyst with over a year of experience working with tools like Power BI, SQL, Excel, and R to uncover insights that support smarter business decisions. I enjoy solving problems through data and bringing clarity to complex information.",
+      "Outside of my analytics work, I have a growing interest in fashion modeling and am currently building my portfolio. It’s a creative outlet that complements my analytical side and allows me to explore a different form of expression."
     ],
     tags: [
       "Fashion Modeling",
       "Data Analysis", 
       "Photography",
-      "Python",
+      "Power BI",
       "SQL"
     ]
   };
@@ -50,11 +50,11 @@ export default function About() {
     {
       category: "Data Analysis",
       items: [
-        { name: "Python", level: 95 },
-        { name: "SQL", level: 90 },
-        { name: "R", level: 85 },
-        { name: "Tableau", level: 80 },
-        { name: "Machine Learning", level: 75 },
+        { name: "Power BI", level: 90 },
+        { name: "SQL", level: 80 },
+        { name: "R", level: 45 },
+        { name: "Power Query", level: 75 },
+        { name: "Microsoft Excel", level: 80 },
       ]
     }
   ];
@@ -203,26 +203,20 @@ export default function About() {
                   <h3 className="text-2xl font-serif mb-6">Education</h3>
                   <div className="space-y-6">
                     <div className="border-l-4 border-fashion-taupe pl-4 py-2">
-                      <h4 className="font-medium">MSc in Data Science</h4>
-                      <p className="text-gray-600">University of Technology, 2019-2021</p>
+                      <h4 className="font-medium">Bachelor Of Engineering In Computer Science</h4>
+                      <p className="text-gray-600">P.A College Of Engineering, Mangalore</p>
                       <p className="text-sm text-gray-700 mt-2">
-                        Specialized in predictive modeling and data visualization
+                        Specialized in computer Science and data Science
                       </p>
                     </div>
                     <div className="border-l-4 border-fashion-taupe pl-4 py-2">
-                      <h4 className="font-medium">BSc in Computer Science</h4>
-                      <p className="text-gray-600">State University, 2015-2019</p>
+                      <h4 className="font-medium"> PUC - Computer Science</h4>
+                      <p className="text-gray-600">The Model School, Abudhabi </p>
                       <p className="text-sm text-gray-700 mt-2">
-                        Minor in Fashion Marketing
+                        Percentage : 82%
                       </p>
                     </div>
-                    <div className="border-l-4 border-fashion-taupe pl-4 py-2">
-                      <h4 className="font-medium">Professional Modeling Course</h4>
-                      <p className="text-gray-600">International Modeling Academy, 2016</p>
-                      <p className="text-sm text-gray-700 mt-2">
-                        Comprehensive training in runway, editorial, and commercial modeling
-                      </p>
-                    </div>
+                    
                   </div>
                 </div>
                 
@@ -231,24 +225,24 @@ export default function About() {
                   <h3 className="text-2xl font-serif mb-6">Experience</h3>
                   <div className="space-y-6">
                     <div className="border-l-4 border-data-teal pl-4 py-2">
-                      <h4 className="font-medium">Senior Data Analyst</h4>
-                      <p className="text-gray-600">Fashion Analytics Inc., 2022-Present</p>
+                      <h4 className="font-medium">BI Analyst & Software Support</h4>
+                      <p className="text-gray-600">Safecare Technology, 06/2024- Present</p>
                       <p className="text-sm text-gray-700 mt-2">
-                        Leading data analysis for major fashion brands, optimizing marketing strategies
+                      Analyzing business data to inform strategy, while supporting software systems for smooth user operations.
                       </p>
                     </div>
                     <div className="border-l-4 border-data-teal pl-4 py-2">
-                      <h4 className="font-medium">Professional Model</h4>
-                      <p className="text-gray-600">Elite Model Agency, 2017-Present</p>
+                      <h4 className="font-medium">Technical Engineer</h4>
+                      <p className="text-gray-600">EmiratesNet, 01/2024 - 02/2024</p>
                       <p className="text-sm text-gray-700 mt-2">
-                        Editorial, commercial and runway modeling for international brands
+                      Contributed to the deployment and support of ELV systems during internship, ensuring efficient operation of security and communication technologies.
                       </p>
                     </div>
                     <div className="border-l-4 border-data-teal pl-4 py-2">
-                      <h4 className="font-medium">Data Visualization Specialist</h4>
-                      <p className="text-gray-600">Tech Solutions Co., 2019-2022</p>
+                      <h4 className="font-medium">Data Science Intern</h4>
+                      <p className="text-gray-600">Code Lab Systems, Mangalore 08/2022-09/2022</p>
                       <p className="text-sm text-gray-700 mt-2">
-                        Created interactive dashboards for business intelligence
+                        Assisted in Creating interactive dashboards for business intelligence
                       </p>
                     </div>
                   </div>

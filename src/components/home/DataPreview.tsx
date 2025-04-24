@@ -9,19 +9,19 @@ export default function DataPreview() {
 
   const dataProjects = [
     {
-      title: "E-commerce Customer Analysis",
-      technologies: "Python, Pandas, SQL",
-      description: "Analyzed customer behavior to optimize user journey and increase conversions by 24%."
+      title: "Clinical Analysis Report - Cortex",
+      technologies: "Power BI, Power Query, MySQL, DAX",
+      description: "Developed and maintained interactive Power BI dashboards to visualize key clinic metrics, including patient data, operational performance, and financial insights. Integrated data from MySQL and connected a complex data model to drive data-driven insights."
     },
     {
-      title: "Fashion Inventory Prediction",
-      technologies: "R, Time Series Analysis",
+      title: "Employee Performance | PwC Switzerland Power BI Job Simulation",
+      technologies: "Power BI , DAX, Microsoft Excel",
       description: "Built a prediction model for fashion inventory management with 92% accuracy."
     },
     {
-      title: "Market Research Dashboard",
-      technologies: "Tableau, SQL, Python",
-      description: "Created an interactive dashboard to visualize market research data for a major fashion brand."
+      title: "Emission CO2 Insights",
+      technologies: "Power BI, Microsoft Excel, DAX",
+      description: "Developed a dynamic Power BI Dashboard focused on analyzing and visualizing vehicle CO2 emissions based on fuel type, Powertrain. Empowered stakeholders to make informed decisions regarding emission reduction strategies and sustainable vehicle options."
     }
   ];
 

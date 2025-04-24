@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -6,33 +5,35 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const images = [
-    "/lovable-uploads/ae139fdd-c90a-4407-b79f-1f8ebad5dc67.png",
-    "/lovable-uploads/1cb96b82-31c8-4f79-9365-eb23a4bfc4c8.png",
-    "/lovable-uploads/dd473452-7149-47a4-856e-075831b4b5a1.png"
+    "lovable-uploads/ae139fdd-c90a-4407-b79f-1f8ebad5dc67.png",
+    "lovable-uploads/1cb96b82-31c8-4f79-9365-eb23a4bfc4c8.png",
+    "lovable-uploads/dd473452-7149-47a4-856e-075831b4b5a1.png",
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen overflow-hidden">
       {/* Background Images */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
           >
             <img
               src={image}
-              alt="Hero Background"
+              alt={`Hero Background ${index + 1}`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
@@ -41,12 +42,11 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative h-full flex flex-col items-center justify-center px-4 md:px-12 lg:px-24">
+      <div className="relative h-full flex flex-col items-center justify-center px-4 md:px-12 lg:px-24 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center"
         >
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
             <span className="block mb-2">Two Worlds.</span>
@@ -56,6 +56,7 @@ export default function Hero() {
             Where fashion modeling meets data analysis. A unique blend of creativity
             and analytical precision for a dual-career portfolio.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-fashion-beige text-fashion-charcoal hover:bg-fashion-taupe">
               <Link to="/fashion">Explore Fashion</Link>
@@ -66,6 +67,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        {/* Scroll Down Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -73,7 +75,7 @@ export default function Hero() {
           className="absolute bottom-10"
         >
           <div className="animate-bounce flex flex-col items-center">
-            <div className="h-10 w-px bg-white/50"></div>
+            <div className="h-10 w-px bg-white/50" />
             <p className="text-white/80 text-sm mt-2">Scroll Down</p>
           </div>
         </motion.div>

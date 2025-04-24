@@ -59,7 +59,7 @@ const Fashion = () => {
       category: "Runway",
       image: "public/lovable-uploads/357ea9c5-6a81-4980-afb3-0dda40df4919.png",
       description: "Walking for a renowned designer at Paris Fashion Week, showcasing avant-garde couture pieces.",
-      client: "Designer House",
+      client: "Faiz Ahamed",
       year: 2022
     },
     {
@@ -69,7 +69,7 @@ const Fashion = () => {
       image: "public/lovable-uploads/7e04893a-ef02-44c6-96ad-5e68880373bb.png",
       description: "A seasonal campaign for winter apparel, shot in a snowy mountain setting.",
       client: "Winter Apparel Inc.",
-      photographer: "Michael Brown",
+      photographer: "Faiz Ahamed",
       year: 2022
     },
     {
@@ -78,8 +78,8 @@ const Fashion = () => {
       category: "Editorial",
       image: "public/lovable-uploads/ae139fdd-c90a-4407-b79f-1f8ebad5dc67.png",
       description: "A clean, minimalist editorial focusing on shape, form, and negative space.",
-      client: "Design Quarterly",
-      photographer: "Sarah Johnson",
+      client: "",
+      photographer: "Faiz Ahamed",
       year: 2023
     },
     {
@@ -88,7 +88,7 @@ const Fashion = () => {
       category: "Campaign",
       image: "public/lovable-uploads/dd473452-7149-47a4-856e-075831b4b5a1.png",
       description: "A fresh and vibrant campaign showcasing spring collection with floral motifs.",
-      client: "Spring Fashion Ltd.",
+      client: "",
       year: 2023
     },
     {
@@ -96,11 +96,21 @@ const Fashion = () => {
       title: "Accessories Spotlight",
       category: "Commercial",
       image: "public/lovable-uploads/effb464c-46e9-4f0e-9149-8adb1d3b1d22.png",
-      description: "Commercial shoot focused on premium accessories and jewelry pieces.",
-      client: "Luxe Accessories",
-      photographer: "David Lee",
-      year: 2022
-    }
+      description: "Commercial shoot.",
+      client: "",
+      photographer: "faiz Ahammed",
+      year: 2023
+    },
+    {
+    id: 8,
+    title: "Aesthetic Nights",
+    category: "Commercial",
+    image: "public/lovable-uploads/fashionnights.png",
+    description: "Commercial shoot.",
+    client: "",
+    photographer: "faiz Ahammed",
+    year: 2023
+  }
   ];
 
   // Filter projects based on active category

@@ -54,6 +54,7 @@ export type Tables<
       ? R
       : never
     : never
+    
 
 export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
